@@ -1,0 +1,25 @@
+ul {
+  list-style: none;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+}
+.wrapper > div {
+  background-color: rgb(35,35,35);
+  color: #f1f1f1;
+  padding:.5em;
+  border-bottom: solid grey .5px;
+}
+.content {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+}
+.content >div {
+  background-color: #eee;
+  padding: .5em;
+  border-bottom: solid grey .5px;
+}
+.content >div:nth-child(odd) {
+  background-color: #ddd;
+}
