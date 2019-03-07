@@ -1,0 +1,52 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h5>Null values of none type | ctrl+shift+i to see the results of below code</h5>
+  <pre>
+  let json1 = '{}';
+  let json2 = '{"myCount": null}';
+  let json3 = '{"myCount": 0}';
+  let json4 = '{"myString": ""}';
+  let json5 = '{"myString": "null"}';
+  let json6 = '{"myArray": []}';
+    </pre>
+
+  <script>
+  var i = null;
+  // var i = 1;
+
+  if(i == 1) {
+     document.write("<p>value is 1</p>");
+  } else {
+     document.write("<p>value is null</p>");
+  }
+    // null values
+    let json1 = '{}';
+    let json2 = '{"myCount": null}';
+    let json3 = '{"myCount": 0}';
+    let json4 = '{"myString": ""}';
+    let json5 = '{"myString": "null"}';
+    let json6 = '{"myArray": []}';
+
+    console.log('null values');
+    console.log(JSON.parse(json1)); // {}
+    console.log(JSON.parse(json2)); // {myCount: null}
+    console.log(JSON.parse(json3)); // {myCount: 0}
+    console.log(JSON.parse(json4)); // {myString: ""}
+    console.log(JSON.parse(json5)); // {myString: "null"}
+    console.log(JSON.parse(json6)); // {myArray: []}
+    document.write(JSON.parse(json1) + '</br>'); // {}
+    document.write(JSON.parse(json2)+ '</br>'); // {myCount: null}
+    document.write(JSON.parse(json3)+ '</br>'); // {myCount: 0}
+    document.write(JSON.parse(json4)+ '</br>'); // {myString: ""}
+    document.write(JSON.parse(json5)+ '</br>'); // {myString: "null"}
+    document.write(JSON.parse(json6)+ '</br>'); // {myArray: []}
+  </script>
+
+</body>
+</html>

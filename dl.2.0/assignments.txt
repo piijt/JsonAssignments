@@ -1,0 +1,317 @@
+Model Solution Assignment DI.2.0
+Research and answer the following:
+
+Are maxLength, or minLength allowed on optional name/value pairs?
+maxLength:
+The value of this keyword MUST be a non-negative integer.
+A string instance is valid against this keyword if its length is less than, or equal to, the value of this keyword.
+The length of a string instance is defined as the number of its characters as defined by RFC 7159 [RFC7159].
+
+minLength:
+The value of this keyword MUST be a non-negative integer.
+A string instance is valid against this keyword if its length is greater than, or equal to, the value of this keyword.
+The length of a string instance is defined as the number of its characters as defined by RFC 7159 [RFC7159].
+Omitting this keyword has the same behavior as a value of 0.
+
+Based on the basics from Chapter 40 JSON has Number, Boolean, Null, String, Object, and Array as object types.
+Research whether they all apply as types in JSON-schema. Make an example that proves your answer.
+
+
+Number:
+
+{
+  "id": 2,
+  "age": 23,
+  "bornyear": 1995,
+  "date": 30,
+  "month": 8,
+  "weight" : 62.5
+}
+
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "age": {
+      "type": "integer"
+    },
+    "bornyear": {
+      "type": "integer"
+    },
+    "date": {
+      "type": "integer"
+    },
+    "month": {
+      "type": "integer"
+    },
+    "weight": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "id",
+    "age",
+    "bornyear",
+    "date",
+    "month",
+    "weight"
+  ]
+}
+
+Boolean: Boolean is of type
+{
+"name": "Smutter",
+"age": 14,
+"declawed": false,
+"sterilised ": false,
+"description": "The Warrior. Takes on anyone."
+}
+
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "age": {
+      "type": "integer"
+    },
+    "declawed": {
+      "type": "boolean"
+    },
+    "sterilised ": {
+      "type": "boolean"
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "age",
+    "declawed",
+    "sterilised ",
+    "description"
+  ]
+}
+
+{
+"name":"time machine",
+"purpose:": "travel time",
+"existence": null
+}
+
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "purpose:": {
+      "type": "string"
+    },
+    "existence": {
+      "type": "null"
+    }
+  },
+  "required": [
+    "name",
+    "purpose:",
+    "existence"
+  ]
+}
+
+Null: is an empty type (see null.html)
+
+var i = null;
+
+if(i == smh) {
+   document.write("<p>value is smh</p>");
+} else {
+   document.write("<p>value is null</p>");
+}
+var json1 = '{}';
+var json2 = '{"myCount": null}';
+var json3 = '{"myCount": 0}';
+var json4 = '{"myString": ""}';
+var json5 = '{"myString": "null"}';
+var json6 = '{"myArray": []}';
+
+document.write(JSON.parse(json1)); // {}
+console.log(JSON.parse(json2)); // {myCount: null}
+console.log(JSON.parse(json3)); // {myCount: 0}
+console.log(JSON.parse(json4)); // {myString: ""}
+console.log(JSON.parse(json5)); // {myString: "null"}
+console.log(JSON.parse(json6)); // {myArray: []}
+
+{
+"name":"time machine",
+"purpose:": "travel time",
+"existence": null
+}
+
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "purpose:": {
+      "type": "string"
+    },
+    "existence": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "name",
+    "purpose:",
+    "existence"
+  ]
+}
+
+String: applies as type in JSON schema
+// Json format
+{
+  "firstname": "Katchiana",
+  "lastname": "Fuzeka",
+  "occupation": "Polakker"
+}
+// JSON Schema
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "firstname": {
+      "type": "string"
+    },
+    "lastname": {
+      "type": "string"
+    },
+    "occupation": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "firstname",
+    "lastname",
+    "occupation"
+  ]
+}
+
+Object: is of type and has properties defined which can make up multiple objects
+
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "person": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "lastname": {
+          "type": "string"
+        },
+        "age": {
+          "type": "integer"
+        },
+        "Born At": {
+          "type": "string"
+        },
+        "Birthdate": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "lastname",
+        "age",
+        "Born At",
+        "Birthdate"
+      ]
+    }
+  },
+  "required": [
+    "person"
+  ]
+}
+
+{
+  "person": {
+    "name": "John",
+    "lastname": "Doe",
+    "age": 35,
+    "Born At": "Poland",
+    "Birthdate": "July 3 1962",
+  }
+}
+
+Array: is of type and has properties of array which can make multiple arrays
+
+{
+  "people": [
+    {
+      "name": "John",
+      "age": 35
+    },
+    {
+      "name": "Kurt",
+      "age": 21
+    },
+    {
+      "name": "Gert",
+      "age": 29
+    },
+    {
+      "name": "Jeff",
+      "age": 15
+    }
+  ]
+}
+
+
+Make a JSON-schema for the JSON in the section called “Assignment DI.1.0” and perform validation of the JSON
+see 1.0.json
+
+Make a JSON-schema for the JSON in the section called “Assignment DI.1.1” and perform validation of the JSON
+see 1.1.json
+
+Make a JSON-schema for the JSON in the section called “Assignment DI.1.2” and perform validation of the JSON
+see 1.2.json
+
+Assignment DI.2.1
+
+Create an AJaX one page application that allows choosing a country from a drop down or as a key in.
+The page issues an AJaX request to a PHP program reading from the World database.
+The data must be returned as JSON and displayed by JavaScript.
+The displayed data must be:
+
+Country name
+Population
+Capital city
+Population of capital city
+All official languages
+Density of population
+Head of state
+
+Assignment DI.2.2
+
+Create an AJaX one page application that allows choosing a country, district combination from the World db.
+The page issues an AJaX request to a PHP program reading from the database.
+The data must be returned as JSON and displayed by JavaScript.
+The displayed data must be:
+
+Country name
+District name
+Cites from district
+Population of said cities
+Population of district
+Population of country

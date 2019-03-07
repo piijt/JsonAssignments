@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "countries": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "speakers": {
+              "type": "string"
+            },
+            "language": {
+              "type": "string"
+            },
+            "countrycode": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "speakers",
+            "language",
+            "countrycode"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "countries"
+  ]
+}
