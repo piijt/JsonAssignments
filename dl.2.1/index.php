@@ -4,8 +4,11 @@ require_once 'DbH.php';
 $dbh = DbH::getDbH();
 $sql = "select name, population, capital, population/surfacearea, headofstate";
 $sql .= " from country";
-$sql .= " where code = 'DNK';";
+$sql .= " where code = 'ABW';";
 $res = $dbh->query($sql);
+
+
+
 
 $arr = array();
 while ($out = $res->fetch(PDO::FETCH_ASSOC)) {

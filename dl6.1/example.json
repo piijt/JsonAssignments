@@ -1,0 +1,41 @@
+{
+  "coord": {
+    "lon": 9.48,
+    "lat": 55.49
+  },
+  "weather": [
+    {
+      "id": 800,
+      "main": "Clear",
+      "description": "clear sky",
+      "icon": "01n"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 2.58,
+    "pressure": 1015,
+    "humidity": 64,
+    "temp_min": 1,
+    "temp_max": 5
+  },
+  "wind": {
+    "speed": 3.6,
+    "deg": 310
+  },
+  "clouds": {
+    "all": 0
+  },
+  "dt": 1552331553,
+  "sys": {
+    "type": 1,
+    "id": 1595,
+    "message": 0.0044,
+    "country": "DK",
+    "sunrise": 1552283191,
+    "sunset": 1552324706
+  },
+  "id": 2618528,
+  "name": "Kolding",
+  "cod": 200
+}
